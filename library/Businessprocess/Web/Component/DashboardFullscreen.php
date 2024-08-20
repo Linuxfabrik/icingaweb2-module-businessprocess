@@ -21,11 +21,7 @@ class DashboardFullscreen extends BaseHtmlElement
     /** @var string */
     protected $tag = 'div';
 
-    protected $defaultAttributes = array(
-        'class' => 'overview-dashboard',
-        'data-base-target' => '_next'
-    );
-
+    protected $defaultAttributes = array('class' => 'overview-dashboard', 'data-base-target' => '_next');
 
     /** @var Storage */
     protected $storage;
