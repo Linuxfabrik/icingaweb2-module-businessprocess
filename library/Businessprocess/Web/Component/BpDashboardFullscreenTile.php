@@ -40,7 +40,7 @@ class BpDashboardFullscreenTile extends BaseHtmlElement
                     'class' => "badge badge-fullscreen state-{$state}",
                     'title' => $node->getAlias()
                 ],
-                Text::create($node->getAlias())->setEscaped()
+                Text::create($node->getAlias())
             ));
         }
 

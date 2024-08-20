@@ -352,17 +352,6 @@ ul.broken-files {
                 }
             }
         }
-
-        .badge-fullscreen {
-            margin: 1px !important;
-            color: #000000;
-            overflow: hidden;
-        }
-    }
-
-    .dashboard-tile-fullscreen {
-        width: unset !important;
-        max-width: 25%;
     }
 
     .dashboard-tile,
@@ -370,11 +359,6 @@ ul.broken-files {
         width: 20em;
         display: inline-block;
         vertical-align: top;
-    }
-
-    .bp-root-tiles-fullscreen {
-        display: flex;
-        flex-wrap: wrap;
     }
 
     .action {
@@ -395,6 +379,33 @@ ul.broken-files {
 
             > span.header {
                 color: @text-color;
+            }
+        }
+    }
+}
+
+#layout.fullscreen-layout {
+    @noOfBadgesPerRow: 3;
+
+    .overview-dashboard {
+        display: flex;
+        flex-wrap: wrap;
+
+        .dashboard-tile {
+            flex: 1 1 auto;
+
+            .bp-root-tiles-fullscreen {
+                @columnGapWidth: 1px;
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: @columnGapWidth;
+
+                .badge {
+                    @minColumnWidth: 100%/@noOfBadgesPerRow;
+                    flex: 1 1 ~"calc(@{minColumnWidth} - @{columnGapWidth})";
+                    .text-ellipsis();
+                }
             }
         }
     }
